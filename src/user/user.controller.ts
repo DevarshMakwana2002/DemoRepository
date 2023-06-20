@@ -35,6 +35,11 @@ export class UserController {
     return this.userService.findOne(+id);
   }
 
+  @Get('/special')
+  specialFunc() {
+    return 'this is special endpoint';
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.userService.update(+id, updateUserDto);
